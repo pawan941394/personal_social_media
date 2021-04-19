@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+{% load crispy_forms_tags %}
+<br><br>
+<div class="p-5">
+    <h1 class="mb-3">Profiles near by you </h1>
+    <hr>
+    <div>
+
+<form action="">
+<input placeholder="search your post here" class="mb-4 input-form mr-3" value="{{ REQUEST.get.SI }}" type="input" name="si" />
+<input class="btn btn-dark btn-sm" type="submit" value="Search" />
+
+</form>
+     <table class="table">
+         <thead class="thead-dark my-3 mt-3"><tr>
+             <th>Name</th>
+             <th>Status</th>
+             <th>Gender</th>
+             <th>Age</th>
+             <th>Read more</th>
+             <th></th>
+         </tr></thead>
+
+
+{% for n1 in myprofile_list %}
+         <tr>
+             <th>{{n1.name}} </th>
+             <th>{{ n1.status}}</th>
+             <th>{{ n1.gender}}</th>
+             <th>{{ n1.age}}</th>
+             <th><a class="btn btn-success btn-sm" href="/social/myprofile/{{n1.id}}">Read more</a></th>
+            <th> {% if n1.followed %}
+                            <a class="btn btn-danger btn-sm" href="/social/myprofile/unfollow/{{n1.id}}">UnFollow</a>
+
+             {% else %}
+                             <a class="btn btn-primary btn-sm" href="/social/myprofile/follow/{{n1.id}}">Follow</a>
+
+
+{% endif %}
+            </th>
+         </tr>
+
+
+
+
+
+
+
+{% endfor %}     </table>    </div>
+</div>
+{% endblock %}

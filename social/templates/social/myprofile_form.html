@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+<main class="p-5">
+    <div class="row">
+        <div class="col-sm-6 offset-sm-3">    <h1>Profile Update</h1>
+<form enctype="multipart/form-data" method="post">
+    {% csrf_token %}
+     {% load crispy_forms_tags %}
+    {{ form | crispy }}<br>
+    <input class="btn btn-success my-3" type="submit"/>
+</form></div>
+    </div>
+
+
+
+</main>
+
+{% endblock %}

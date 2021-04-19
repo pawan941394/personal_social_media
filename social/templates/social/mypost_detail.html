@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+{% load crispy_forms_tags %}
+
+
+<div class="p-5"  id="headfix">
+<hr style="color:black;background-color:black; width:100%; height:0.5px;">
+    <h1 class="mb-3" style="display:flex; margin:auto; align-items:center;">{{mypost.subject}}</h1>
+<hr  style="color:black; background-color:black; width:100%; height:0.5px;">
+    <div class="row">
+        <div class="col-sm-6">
+            <p><strong>Date :: </strong>{{mypost.cr_date | date:"d/m/y"}}</p>
+        <P><strong>MSG :: </strong> {{mypost.msg}}</P>
+            <span> <a href="/social/mypost/" class="btn btn-success btn-sm"> Back</a></span>
+ </div>
+        <div class="col-sm-6">
+                <img src="/media/{{mypost.pic}}" class="img-fluid" />
+
+        </div>
+    </div>
+</div>
+{% endblock %}

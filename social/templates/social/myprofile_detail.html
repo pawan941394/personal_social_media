@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+{% load crispy_forms_tags %}
+
+
+<div class="p-5"  id="headfix">
+<hr style="color:black;background-color:black; width:100%; height:0.5px;">
+    <h1 class="mb-3" style="display:flex; margin:auto; align-items:center;">{{myprofile.name}}</h1>
+<hr  style="color:black; background-color:black; width:100%; height:0.5px;">
+    <div class="row">
+        <div class="col-sm-6">
+            <p><strong>Age :: </strong>{{myprofile.age}}</p>
+            <p><strong>Gender :: </strong>{{myprofile.gender}}</p>
+        <P><strong>Status :: </strong> {{myprofile.status}}</P>
+        <P><strong>Phone NO :: </strong> {{myprofile.phone_no}}</P>
+        <P><strong>Description :: </strong> {{myprofile.description}}</P>
+            <span> <a href="/social/myprofile" class="btn btn-success btn-sm"> Back</a></span>
+ </div>
+        <div class="col-sm-6">
+                <img src="/media/{{myprofile.pic}}" class="img-fluid" />
+
+        </div>
+    </div>
+</div>
+{% endblock %}

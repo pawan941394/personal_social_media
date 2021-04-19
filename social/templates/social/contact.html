@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+<main class="p-5">
+    <div class="row">
+        <div class="col"><h1>Contact</h1>
+        <hr></div>
+    </div>
+
+<div class="row">
+    <div class="col-sm-6">
+        <form action="/social/contact/" method="post"> {% csrf_token %}
+
+            <input class="form-control" type="text" name="Cname" placeholder="Name"><br>
+            <input class="form-control" type="email" name="Cemail" placeholder="Email"><br>
+            <input class="form-control" type="tel" name="Cphone_no" placeholder="Phone No"><br>
+            <textarea class="form-control"  type="text"  name="Cmassage" placeholder="your message"></textarea><br>
+            <button class="btn btn-success btn-block" type="submit">Submit</button>
+        </form>
+    </div>
+    <div class="col-sm-6 contact-icon-infor" style=" align-items: center;
+    justify-content: center;
+    margin: auto;
+    display: flex;">
+        <p>
+            <strong> <i class="fa fa-map-marker" aria-hidden="true" style="color:red;"></i> &nbsp;Address  :: Alwar (Rajasthan)</strong>
+<br>            <strong> <i class="fa fa-instagram" aria-hidden="true" style="color:#8a3ab9;"></i> &nbsp;Instagram  :: @pawan941394</strong>
+<br>            <strong> <i class="fa fa-linkedin" aria-hidden="true" style="color:#4c68d7;"></i> &nbsp;Linkedin  :: @pawankumar</strong>
+<br>            <strong> <i class="fa fa-phone" aria-hidden="true" style="color:black;"></i> &nbsp;Phone_No.  :: 9413944510</strong>
+<br>            <strong> <i class="fa fa-envelope" aria-hidden="true" style="color:green;"></i> &nbsp;Email_Id  :: pawan941394@gmail.com</strong>
+
+        </p>
+    </div>
+</div>
+</main>
+
+
+
+<div class="container map-container">
+    <iframe class="map-iframe" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7279004.311095242!2d74.21793260000001!3d27.023803599999997!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3972998498513025%3A0x5caabd8e3542948!2sAlwar%20Bus%20Stand!5e0!3m2!1sen!2sin!4v1618070742246!5m2!1sen!2sin"  style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+</div>
+{% endblock %}
